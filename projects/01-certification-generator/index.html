@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Certification Generator</title>
+</head>
+<body>
+    <button id="back-button" class="main-button">Back</button>
+
+    <section id="form">
+        <div id="decoration"></div>
+        <h2>Certificate Fields</h2>
+        <p class="light-text">Type values below — the certificate updates instantly.
+            <br>
+            Validation rules apply. Print is enabled only when all fields are valid.
+        </p>
+        <form onsubmit="event.preventDefault()">
+            <div>
+                <label for="student-name-field">Student Name</label>
+                <input type="text" id="student-name-field" aria-describedby="invalid-name-error" placeholder="e.g., Mahmoud Ayesh">
+                <p id="invalid-name-error" class="invalid-message">Name is required (min 3 characters).</p>
+            </div>
+            <div>
+                <label for="course-name-field">Course Name</label>
+                <textarea id="course-name-field" aria-describedby="invalid-course-name-error" placeholder="e.g., C# Level 2"></textarea>
+                <p id="invalid-course-name-error" class="invalid-message">Course name is required (min 6 characters).</p>
+            </div>
+            <div>
+                <label for="instructor-name-field">Instructor Name</label>
+                <input type="text" id="instructor-name-field" aria-describedby="invalid-instructor-name-error" placeholder="e.g., Dr. Mohammed Abu-Hadhoud">
+                <p id="invalid-instructor-name-error" class="invalid-message">Instructor name is required (min 3 characters).</p>
+            </div>
+            <div>
+                <label for="website-field">Web Site</label>
+                <input type="text" id="website-field" aria-describedby="website-field-error" placeholder="e.g., www.website.com">
+                <p id="website-field-error" class="invalid-message">Valid web site is required.</p>
+            </div>
+            <div>
+                <label for="signature-image-field">Signature Image</label>
+                <input type="file" id="signature-image-field" accept="image/*" aria-describedby="invalid-signature-image-error">
+                <p id="invalid-signature-image-error" class="invalid-message">Please upload a signature image.</p>
+            </div>
+            <div>
+                <label for="certificate-serial-field">Certificate Serial</label>
+                <input type="text" id="certificate-serial-field" aria-describedby="invalid-certificate-serial-error" placeholder="e.g., MD-2025-000123">
+                <p id="invalid-certificate-serial-error" class="invalid-message">Serial is required (letters/numbers/- only, min 6).</p>
+            </div>
+            <div id="buttons-container">
+                <button class="second-button" id="fill-demo-button">Fill Demo</button>
+                <button class="second-button" id="reset-button">Reset</button>
+                <button class="main-button" id="print-button">Print A4 Landscape</button>
+            </div>
+        </form>
+        <p id="status-line" class="not ok">Please fix the highlighted fields to enable printing.</p>
+    </section>
+
+    <section id="certificate">
+        <header>
+            <p class="light-text">Preview (Print will output ONLY the certificate)</p>
+            <p id="cert-status-line" class="not ok">Not ready to print</p>
+        </header>
+        <div>
+            <header>
+                <div>
+                    <h4>ISSUED DATE</h4>
+                    <p id="issued-date">-</p>
+                </div>
+                <p id="website">www.website.com</p>
+                <div>
+                    <h4>CERTIFICATE SERIAL</h4>
+                    <p id="certificate-serial">-</p>
+                </div>
+            </header>
+            <main>
+                <img src="media/blue-eagle-head-esport-logo-png.webp" alt="random-logo">
+                <h2>Certificate of Completion</h2>
+                <p>This is proudly presented to</p>
+                <p id="certificate-student-name">Student Name</p>
+                <p>for successfully completing</p>
+                <p class="certificate-bold-text" id="certificate-main-course-name">Course Name Goes Here</p>
+            </main>
+            <hr>
+            <footer>
+                <img src="media/Certified-Transparent-Background.webp" alt="certified-image">
+                <div>
+                    <img id="signature" src="media/DefaultSig.png" alt="signature-image">
+                    <p id="instructor-name">Instructor Name Goes Here</p>
+                </div>
+            </footer>
+        </div>
+    </section>
+</body>
+</html>

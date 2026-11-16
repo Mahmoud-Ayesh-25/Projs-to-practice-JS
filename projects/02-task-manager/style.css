@@ -1,0 +1,170 @@
+body > div{
+    display: flex;
+    gap: 15px;
+}
+
+body > div > section{
+    width: 700px;
+}
+
+#error-message{
+    padding: 10px 10px;
+    border: 2px solid var(--error-text-color);
+    color: var(--error-text-color);
+    border-radius: 15px;
+}
+
+#form-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form-section form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-section form > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#form-section > section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#buttons-container{
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: center;
+}
+
+#tasks-section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#tasks-section > header{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#tasks-section > header > p{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+#tasks-nav{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#tasks-cards > div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+#cards-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card{
+    border: 2px solid var(--input-border-color);
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.card > .card-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.card .emphasized{
+    text-wrap: nowrap;
+    line-height: 30px;
+}
+
+.card.pending{
+    background-color: rgba(255, 174, 0, 0.123);
+}
+
+.card.done{
+    background-color: rgba(0, 255, 170, 0.123);
+}
+
+#toast{
+    width: 200px;
+    position: absolute;
+    top: -45px;
+    right: calc(50% - 100px);
+    background-color: var(--main-text-color);
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    animation: toast-begin 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes toast-begin {
+    0%{
+        top: -45px;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+
+@media (max-width: 1420px)
+{
+    body > div{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px)
+{
+    body, button, span, p, input, textarea{
+        font-size: clamp(0.5rem, 0.6rem, 0.7rem) !important;
+    }
+
+    .card-buttons{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    body > div > section{
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Weather App</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h2>Weather App (Public API)</h2>
+            <p class="light-text">Search any city → get current weather + 7-day forecast.</p>
+            <div>
+                <input id="search" type="text" placeholder="Type a city... (e.g., Cairo, Amman, Paris)">
+                <button id="search-btn" class="second-button">Search</button>
+                <button id="use-cairo-btn" class="main-button">Use Cairo</button>
+            </div>
+            <p id="loading"></p>
+            <p id="error">Failed to fetch</p>
+        </header>
+        <main id="results">
+            <section>
+                <h2 id="city">Amman, Jordan</h2>
+                <p id="city-meta" class="light-text">Lat/Lon: 31.95522, 35.94503</p>
+                <h1 id="temperature">13.5°C</h1>
+                <div>
+                    <span id="humidity" class="emphasized">Humidity: 43%</span>
+                    <span id="wind" class="emphasized">Wind: 3.3 km/h</span>
+                </div>
+                <p id="local-time" class="light-text">Local time: 2026-11-13T08:45 (Asia/Amman)</p>
+            </section>
+            <section>
+                <h2>7-Day Forecast</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                            <th>Rain</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forecast-rows-container"></tbody>
+                </table>
+            </section>
+        </main>
+    </section>
+</body>
+</html>

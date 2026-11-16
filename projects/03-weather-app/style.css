@@ -1,0 +1,134 @@
+h1{
+    font-size: 3rem;
+    color: var(--main-theme-color);
+}
+
+body > section{
+    width: 1000px;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header > div{
+    display: flex;
+    gap: 15px;
+}
+
+header > div > input{
+    width: 100%;
+}
+
+main{
+    display: none;
+    gap: 20px;
+    width: 100%;
+}
+
+main > section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10px;
+}
+
+body > section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.emphasized{
+    line-height: 30px;
+}
+
+#loading{
+    display: none;
+}
+
+#loading::after{
+    content: "";
+    animation: loading-anim 1.5s steps(8, end) infinite;
+}
+
+@keyframes loading-anim {
+    0%{
+        content: "L";
+    }
+    10%{
+        content: "LO";
+    } 
+    20%{
+        content: "LOA";
+    }
+    30%{
+        content: "LOAD";
+    }
+    40%{
+        content: "LOADI";
+    }
+    50%{
+        content: "LOADIN";
+    }
+    60%{
+        content: "LOADING";
+    }
+    100%{
+        content: "LOADING";
+    }
+}
+
+#error{
+    color: var(--error-text-color);
+    border: 2px solid var(--error-text-color);
+    border-radius: 15px;
+    padding: 10px;
+    display: none;
+}
+
+table{
+    border: 2px solid var(--main-text-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 10px;
+    border-spacing: 0px;
+    padding: 10px;
+}
+
+th, td{
+    text-align: left;
+    padding: 5px;
+    border-bottom: 1px solid var(--light-text-color);
+}
+
+tr:last-child td{
+    border-bottom: none;
+}
+
+
+@media (max-width: 1040px){
+    main{
+        flex-direction: column;
+    }
+
+    main > section{
+        width: 100%;
+    }
+
+    body > section{
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px){
+    table{
+        font-size: clamp(0.5rem, 0.7rem, 0.9rem) !important;
+    }
+
+    header > div{
+        flex-wrap: wrap;
+    }
+}

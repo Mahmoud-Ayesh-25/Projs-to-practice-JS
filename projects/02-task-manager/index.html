@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Task Manager</title>
+</head>
+<body>
+
+    <div id="toast">Loaded!</div>
+
+    <div>
+        <section id="form-section">
+            <div>
+                <h2>Task Manager (IndexedDB)</h2>
+                <p class="light-text">One page • Modern UI • Persisted locally (refresh-safe)</p>   
+            </div>
+            <div id="error-message">Title is required</div>
+            <section>
+                <div>
+                    <h3>Add New Task</h3>
+                    <p class="light-text">Pending tasks are <span class="emphasized">Yellow</span>. Mark done to turn <span class="emphasized">Green</span>.</p>
+                </div>
+                <form onsubmit="event.preventDefault()">
+                    <div>
+                        <label for="title-field">Title (required)</label>
+                        <input type="text" id="title-field" placeholder="e.g., Study OOP, Lesson 26">
+                    </div>
+                    <div>
+                        <label for="description-field">Description (optional, max 300)</label>
+                        <textarea id="description-field" placeholder="Details..."></textarea>
+                    </div>
+                    <div id="buttons-container">
+                        <button class="second-button" id="reset-button">Reset</button>
+                        <button class="main-button" id="add-task-button">Add Task</button>
+                        <p id="loading" class="hidden">Loading…</p>
+                    </div>
+                </form>
+                <p class="light-text">Tip: Press <span class="keyboard">Ctrl</span> + <span class="keyboard">Enter</span> to add quickly.</p>
+            </section>
+        </section>
+        <section id="tasks-section">
+            <header>
+                <p class="emphasized" id="count-text">Total: 0 • Pending: 0 • Done: 0</p>
+                <button class="second-button" id="seed-button">Seed</button>
+                <button class="second-button delete" id="clear-all-button">Clear All</button>
+            </header>
+            <body>
+                <ul id="tasks-nav">
+                    <li><button class="second-button selected" data-filter="all">All</button></li>
+                    <li><button class="second-button" data-filter="pending">Pending</button></li>
+                    <li><button class="second-button" data-filter="done">Done</button></li>
+                </ul>
+                <input id="search" type="text" placeholder="Search Title/Description...">
+                <div id="tasks-cards">
+                    <div>
+                        <h3>Tasks</h3>
+                        <p class="light-text" id="shown-text">0 shown</p>
+                    </div>
+                    <section>
+                        <div id="tasks-container"></div>
+                    </section>
+                </div>
+            </body>
+        </section>
+    </div>
+</body>
+</html>

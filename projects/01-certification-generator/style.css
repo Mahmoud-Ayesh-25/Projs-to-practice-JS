@@ -1,0 +1,265 @@
+#form{
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+#buttons-container{
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ok{
+    color: var(--main-theme-color);   
+}
+
+.not.ok{
+    color: var(--error-text-color);
+}
+
+#status-line.error{
+    color: var(--error-text-color);   
+}
+
+.invalid input, .invalid textarea{
+    border-color: var(--error-text-color);
+}
+
+.invalid .invalid-message{
+    display: block;
+}
+
+.invalid-message{
+    display: none;
+}
+
+#back-button{
+    align-self: flex-start;
+}
+
+#certificate{
+    width: 800px;
+}
+
+#certificate > header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#certificate > div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    border: 2px solid var(--input-border-color);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#certificate > div > header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#certificate > div > header > div{
+    width: 30%;
+}
+
+#certificate > div > header > div:last-child:has(#certificate-serial){
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+#certificate > div > main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#certificate > div > main > img{
+    width: 20%;
+    aspect-ratio: 1/1;
+}
+
+.certificate-bold-text{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#certificate-student-name{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--main-font);
+    margin: 20px 0px;
+    color: var(--main-theme-color);
+}
+
+hr{
+    border: 1px solid var(--main-theme-color);
+    margin: 15px 30px;
+    min-width: 70%;
+}
+
+#certificate > div > footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#certificate > div > footer > p{
+    align-self: flex-end;
+}
+
+#certificate > div > footer > img{
+    width: 25%;
+    filter: hue-rotate(30deg) saturate(200%);
+}
+
+#certificate > div > footer > div{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#certificate > div > footer > div > img{
+    width: 100%;
+    filter: invert(100%);
+}
+
+.hidden{
+    display: none;
+}
+
+
+@media (max-width: 1450px) {
+    body{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 820px) {
+    section{
+        width: calc(100% - 1rem) !important;
+    }
+}
+
+@media (max-width: 660px)
+{
+    #certificate{
+        font-size: clamp(0.5rem, 0.7rem, 1rem);
+        padding: clamp(10px, 11px, 12px);
+        margin: clamp(10px, 11px, 12px);
+    }
+
+    .certificate-bold-text{
+        font-size: clamp(0.7rem, 0.9rem, 1.2rem);
+    }
+
+    #certificate-student-name{
+        font-size: 1.4rem;
+        margin: clamp(10px, 11px, 12px);
+    }
+
+    hr{
+        margin: clamp(10px, 11px, 12px);
+    }
+
+    #certificate > div{
+        padding: 10px;
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 500px)
+{
+    #certificate{
+        font-size: clamp(0.3rem, 0.5rem, 0.8rem);
+        padding: clamp(8px, 9px, 10px);
+        margin: clamp(8px, 9px, 10px);
+    }
+
+    .certificate-bold-text{
+        font-size: clamp(0.5rem, 0.7rem, 1rem);
+    }
+
+    #certificate-student-name{
+        font-size: 1.2rem;
+        margin: clamp(8px, 9px, 10px);
+    }
+
+    hr{
+        margin: clamp(8px, 9px, 10px);
+    }
+
+    #certificate > div{
+        padding: 8px;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 400px)
+{
+    #certificate{
+        font-size: clamp(0.3rem, 0.4rem, 0.6rem);
+    }
+
+    .certificate-bold-text{
+        font-size: clamp(0.5rem, 0.6rem, 0.8rem);
+    }
+
+    #certificate-student-name{
+        font-size: 1rem;
+    }
+}
+
+@media print{
+    @page {
+        size: landscape;
+        margin: 10mm;
+    }
+
+    body::after, body::before{
+        display: none;
+    }
+    body{
+        display: block;
+        padding: 0px;
+    }
+    #back-button{
+        display: none;
+    }
+    #form{
+        display: none;
+    }
+    #certificate{
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0px;
+        margin: auto;
+        width: 100%;
+    }
+    #certificate > header{
+        display: none;
+    }
+    #certificate > div{
+        margin: 0px;
+        width: 100%;
+    }
+}
