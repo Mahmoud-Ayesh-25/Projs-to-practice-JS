@@ -1,3 +1,5 @@
+"use strict"
+
 const UI = {
     search: document.getElementById("search"),
     searchBtn: document.getElementById("search-btn"),

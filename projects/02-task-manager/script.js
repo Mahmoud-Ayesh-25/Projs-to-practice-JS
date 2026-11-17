@@ -1,3 +1,5 @@
+"use strict"
+
 const UI = {
     toast: document.getElementById("toast"),
     title: document.getElementById("title-field"),

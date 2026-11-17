@@ -107,7 +107,7 @@ h1, h2, h3, h4 ,h5, h6{
     font-family: var(--main-font);
 }
 
-button, input[type="file"]::file-selector-button{
+button,a , input[type="file"]::file-selector-button{
     font-family: var(--main-font);
     transition: 0.3s;
     padding: 7px 10px;
@@ -144,13 +144,14 @@ button, input[type="file"]::file-selector-button{
     background-position: 300%;
 }
 
-.second-button, input[type="file"]::file-selector-button{
+.second-button, a, input[type="file"]::file-selector-button{
     background-color: transparent;
     color: var(--second-button-text-color);
     border: 2px solid var(--second-button-text-color);
+    text-decoration: none;
 }
 
-.second-button:hover, input[type="file"]::file-selector-button:hover{
+.second-button:hover, a:hover, input[type="file"]::file-selector-button:hover{
     border-color: var(--shadow-color);
     box-shadow: 0 0 3px var(--shadow-color);
 }
