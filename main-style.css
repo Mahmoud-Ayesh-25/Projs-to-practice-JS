@@ -196,6 +196,13 @@ button.selected{
     outline-offset: 2px;
 }
 
+#back{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

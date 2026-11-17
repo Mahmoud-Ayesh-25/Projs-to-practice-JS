@@ -108,6 +108,13 @@ tr:last-child td{
     border-bottom: none;
 }
 
+#back{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
 
 @media (max-width: 1040px){
     main{
